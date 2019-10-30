@@ -21,6 +21,17 @@
                     </thead>
                     <tr>
                         <td>
+                            Customers
+                        </td>
+                        <td>
+                            {{$customers->count()}}
+                        </td>
+                        <td>
+                            <a href="/customers">View all</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             Ports
                         </td>
                         <td>

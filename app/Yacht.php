@@ -12,6 +12,10 @@ class Yacht extends Model
         return $this->belongsTo(App\Port::class, 'port_id');
     }
 
+    public function reservations(){
+        return $this->belongsTo(App\Reservation::class, 'yacht_id');
+    }
+
     public function yachttypes(){
         return $this->hasOne(App\YachtType::class, 'yacht_type_id');
     }

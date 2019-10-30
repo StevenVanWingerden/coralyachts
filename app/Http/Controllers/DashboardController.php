@@ -7,6 +7,7 @@ use App\User;
 use App\Yacht;
 use App\YachtType;
 use App\Port;
+use App\Customer;
 
 
 class DashboardController extends Controller
@@ -31,6 +32,7 @@ class DashboardController extends Controller
         $ports = Port::all();
         $yachttypes = YachtType::all();
         $yachts = Yacht::all();
-        return view('dashboard',['ports'=> $ports,'yachttypes' => $yachttypes, 'yachts' => $yachts]);
+        $customers = Customer::all();
+        return view('dashboard',['ports'=> $ports,'yachttypes' => $yachttypes, 'yachts' => $yachts, 'customers' => $customers]);
     }
 }

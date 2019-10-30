@@ -5,21 +5,21 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Ports ({{ $portsAmount }})</h4>
+                        <h4>Customers ({{ $customersAmount }})</h4>
                     </div>
     
                     <div class="panel-body">
-                        @if (count($ports) > 0)
+                        @if (count($customers) > 0)
                         <table class="table">
-                        @foreach ($ports as $port)
+                        @foreach ($customers as $customer)
                             <tr>
-                                <td><a href="/ports/{{$port->id}}">{{ $port->name }}</a></td>
+                                <td><a href="/customers/{{$customer->id}}">{{ $customer->firstname }} {{$customer->lastname}}</a></td>
                                 <td>
-                                    <a href="/ports/{{$port->id}}/edit" class="btn btn-primary">Edit</a>
+                                    <a href="/customers/{{$customer->id}}/edit" class="btn btn-primary">Edit</a>
                                 </td>
                                 <td>
                                     <span class="table-remove">
-                                        {!!Form::open(['action' =>['PortsController@destroy', $port->id], 'method' => 'POST'])!!}
+                                        {!!Form::open(['action' =>['CustomersController@destroy', $customer->id], 'method' => 'POST'])!!}
                                             {{Form::hidden('_method', 'DELETE')}}
                                             {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
                                         {!!Form::close()!!}
@@ -27,14 +27,14 @@
                                 </td>                                
                             </tr>
                         @endforeach
-                        @if ($portsAmount>4)
+                        @if ($customersAmount>4)
                         <tr>
-                            <td>{{$ports->links()}}</td>
+                            <td>{{$customers->links()}}</td>
                         </tr>                        
                         @endif
                         <tr>
                             <td>
-                                <a href="ports/create" class="btn btn-primary">Add new port</a>
+                                <a href="customers/create" class="btn btn-primary">Add new customer</a>
                             </td>
                         </tr>
                         </table>
@@ -43,10 +43,10 @@
             </div>
         </div>
     @else
-        <p>No ports found</p>
+        <p>No customers found</p>
         <tr>
             <td>
-                <a href="ports/create" class="btn btn-primary">Add new port</a>
+                <a href="customers/create" class="btn btn-primary">Add new customer</a>
             </td>
         </tr>
         

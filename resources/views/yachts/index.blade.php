@@ -63,6 +63,11 @@
         </div>
     @else
         <p>No yachts found</p>
+        <tr>
+            <td>
+                <a href="yachts/create" class="btn btn-primary">Add new yacht</a>
+            </td>
+        </tr>
         
     @endif
     
