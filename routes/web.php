@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::put('yachts/update_rent/{id}', 'YachtsController@update_rent');
 Route::resource('ports', 'PortsController');
 Route::resource('customers', 'CustomersController');
+Route::resource('reservations', 'ReservationsController');
 Route::resource('yachttypes', 'YachtTypesController');
 Route::resource('yachts', 'YachtsController');
 
